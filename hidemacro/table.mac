@@ -1,0 +1,49 @@
+//		選択した範囲をTableタグでTableにするマクロ。TABが列の切り目
+
+if(selecting !=1)
+{
+	message "No target description";
+	endmacro;
+}
+
+cut;
+beginclipboardread;
+$a = getclipboard;
+$buf= "<style>   .table3 {   border-collapse: collapse; } .table3 th, .table3 td {   border: 1px solid gray; } .table3 th {   background-color: #ccf; }    </style> "  + "\x0D\x0A" + "<Table class = \x22table3\x22>" + "\x0D\x0A";
+
+	$temp = "<TR><TH>" + leftstr($a,strlen($a)-1) + "</TH></TR>" + "\x0D\x0A";
+	call s_replace, $temp, "TH";
+
+	$buf = $buf  +  $$return;
+	$a =  getclipboard;
+
+
+while($a != "")
+{
+
+	$temp = "<TR><TD>" + leftstr($a,strlen($a)-1) + "</TD></TR>" + "\x0D\x0A";
+	call s_replace, $temp, "TD";
+
+	$buf = $buf  +  $$return;
+	$a =  getclipboard;
+}
+$buf = $buf + "</Table>" + "\x0D\x0A";
+setclipboard $buf;
+
+paste;
+endmacro;
+	
+
+s_replace:
+	$$str = $$1;
+	$$rep = $$2;
+	##h_main = hidemaruhandle(0);
+	openfile "/h";
+	##h_sub = hidemaruhandle(0);
+	insert $$str;
+	replaceall "\\t" , "</" + $$rep + "><" + $$rep + ">" , regular, nocasesense, nohilight;
+	selectall;
+	$$str_re = gettext(seltopx,seltopy,selendx,selendy);
+	setactivehidemaru ##h_main;
+	closehidemaruforced ##h_sub;
+	return $$str_re;
