@@ -13,18 +13,18 @@
        </head>
 <body>
        
-       <canvas id="mycanvas" width="640" height="400" ></canvas>
+       <canvas id="mycanvas" width="640" height="300" ></canvas>
        <center>
-              <input type="button" value="   ＜   " onclick="moveleft()"></button>
-              <input type="button" value="   下   " onclick="movedown()"></button>
-              <input type="button" value="   ＞   " onclick="moveright()"></button>
-              <input type="button" value="   回   " onclick="moverotate()"></button>
+              <input type="button" value="   ＜   " style="padding:10px;font-size:20px;" onclick="moveleft()" width="100" height="100"></button>
+              <input type="button" value="   下   " style="padding:10px;font-size:20px;" onclick="movedown()" width="100" height="100"></button>
+              <input type="button" value="   ＞   " style="padding:10px;font-size:20px;" onclick="moveright()" width="100" height="100"></button>
+              <input type="button" value="   回   " style="padding:10px;font-size:20px;" onclick="moverotate()" width="100" height="100"></button>
        </center>
                      <script >
 
 const GAME_SPEED = 500; //1 sec
 const FIELD_COL = 10;   //tetris screen width
-const FIELD_ROW = 20;   //tetris screen hight
+const FIELD_ROW = 15;   //tetris screen hight
 const BLOCK_SIZE = 30;
 const TETRO_SIZE = 4;
 const SCREEN_W = BLOCK_SIZE * FIELD_COL;
