@@ -8,7 +8,7 @@ var map = [
     [2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2],
     [2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2],
     [2,2,2,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,1,1,1, 1,1,1,1,1,1,1,2,2,2],
-    [2,2,2,1,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,1,1,2,2,2],
+    [2,2,2,1,0,0,1,0,0,0, 0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,1,1,2,2,2],
 
     [2,2,2,1,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,1,1,2,2,2],
     [2,2,2,1,0,1,0,1,0,1, 0,1,0,1,0,0,0,0,0,0, 0,0,0,0,0,0,0,0,0,0, 0,0,0,0,0,1,1,2,2,2],
@@ -92,7 +92,7 @@ const WALL_COLOR =  "#6B6"; //green
 const WATER_COLOR = "#7EF"; //aqua
 
 var img_mycar = new Image();
-img_mycar.src = "./js/mycar.jpg";
+img_mycar.src = "./js_rallyx/mycar4.jpg";
 
 
 var vmap_x0_point = 0;
@@ -101,6 +101,7 @@ var mycar_x = MYCAR_X_START;
 var mycar_y = MYCAR_Y_START;
 var vector_x = 0;
 var vector_y = 0;
+var mycar_num = 0;
 
 var canv = document.getElementById("mycanvas");
 var con = canv.getContext("2d");
@@ -144,11 +145,19 @@ function draw_vmap()
     }
 
     // draw mycar
-    con.drawImage(img_mycar, MYCAR_X_START * WALL_W, MYCAR_Y_START * WALL_H);
+    draw_mycar(mycar_num);
+    
+    draw_smallmap();
+
+}
+
+function draw_mycar( num )
+{
+    var clip_x = num * WALL_W;
+    con.drawImage(img_mycar,clip_x,0,WALL_W,WALL_H, MYCAR_X_START * WALL_W, MYCAR_Y_START * WALL_H,WALL_W, WALL_H);
     //con.fillStyle = "#F66"; //red   draw mycar
     //con.fillRect(MYCAR_X_START * WALL_W, MYCAR_Y_START * WALL_H, WALL_W, WALL_H);
 
-    draw_smallmap();
 
 }
 
@@ -218,18 +227,22 @@ document.onkeydown = function(e)
         case "ArrowLeft": //left
             vector_x=-1;
             vector_y=0;
+            mycar_num = 3;
             break;
         case "ArrowRight": //right
             vector_x=+1;
             vector_y=0;
+            mycar_num = 1;
             break;
         case "ArrowUp": //up
             vector_x=0;
             vector_y=-1;
+            mycar_num = 0;
             break;
         case "ArrowDown": //down
             vector_x=0;
             vector_y=+1;
+            mycar_num = 2;
             break;
 
     }
