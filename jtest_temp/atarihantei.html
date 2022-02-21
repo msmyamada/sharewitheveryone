@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+       <head>
+              <meta charset="utf-8">
+              <title>My game</title>
+              <style>
+                     canvas {
+                         border: 1px solid rgb(59, 214, 59);
+                     }
+                 </style>
+       </head>
+<body>
+   <canvas id="mycanvas" width="640" height="480" ></canvas>
+   <script>
+const BALL_W = 50;
+const BALL_H = 60;
+const MITT_W = 30;
+const MITT_H = 20;
+const MOVING = 10;  // 1 step for any moving
+
+var canv = document.getElementById("mycanvas");
+var con = canv.getContext("2d");
+con.width = 640;
+con.height = 480;
+let ball_x = 310;
+let ball_y = 210; 
+let mitt_x = 320;
+let mitt_y = 430;
+
+
+document.onkeydown = function(e)
+{
+    switch(e.key)
+    {
+        case "ArrowLeft": //left
+            con.clearRect(mitt_x,mitt_y,MITT_W,MITT_H);
+            mitt_x -= MOVING;
+            break;
+        case "ArrowRight": //right
+            con.clearRect(mitt_x,mitt_y,MITT_W,MITT_H);
+            mitt_x += MOVING;
+            break;
+        case "ArrowUp": //Up
+            con.clearRect(mitt_x,mitt_y,MITT_W,MITT_H);
+            mitt_y -= MOVING;
+            break;
+        case "ArrowDown": //Down
+            con.clearRect(mitt_x,mitt_y,MITT_W,MITT_H);
+            mitt_y += MOVING;
+            break;
+
+    }
+    con.fillStyle = "red";  //Jibun
+    con.fillRect(mitt_x,mitt_y, MITT_W, MITT_H);
+
+    con.fillStyle = "blue"; //Teki
+    con.fillRect(ball_x,ball_y, BALL_W, BALL_H);
+
+    if(atari_hantei(mitt_x, mitt_y, MITT_W, MITT_H, ball_x, ball_y, BALL_W, BALL_H))
+        alert("Hit!");
+}
+
+
+function atari_hantei(x0,y0, w0,h0, x1,y1, w1,h1)
+{
+    var x_flag = false;
+    var y_flag = false;
+    if( IsWithinRange(x1, x0, x0+w0) || IsWithinRange(x1+w1, x0, x0+w0) ||
+        IsWithinRange(x0, x1, x1+w1) || IsWithinRange(x0+w0, x1, x1+w1)
+    )
+        x_flag = true;
+    
+    if( IsWithinRange(y0, y1, y1+h1) || IsWithinRange(y0+h0, y1, y1+h1) ||
+        IsWithinRange(y1, y0, y0+h0) || IsWithinRange(y1+h1, y0, y0+h0)
+    )
+        y_flag = true;
+    
+    if(x_flag && y_flag)
+        return true;
+    else
+        return false;
+}
+function IsWithinRange(a, st, ed)   // verify if st < a < ed
+{
+    if( st < a && a < ed)
+        return true;
+    else
+        return false;
+}
+
+
+   </script>
+</body>
+</html>  
