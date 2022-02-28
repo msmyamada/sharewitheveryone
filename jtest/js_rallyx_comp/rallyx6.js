@@ -101,14 +101,17 @@ const DOT_TEKI_COLOR =  "#F66"; //Red   draw teki car
 const DOT_MY_COLOR =  "#33F"; //Blue   draw mycar
 const DOT_FLAG_COLOR =  "#FB3"; // yellow flag
 
+const BOMB_SOUND = "./small_explosion2.mp3";
+const GET_SOUND = "./shoot2.mp3";
+
 var img_mycar = new Image();
-img_mycar.src = "./js_rallyx/mycar4.jpg";
+img_mycar.src = "./mycar4.jpg";
 var img_tekicar = new Image();
-img_tekicar.src = "./js_rallyx/tekicar4.jpg";
+img_tekicar.src = "./tekicar4.jpg";
 var img_flag = new Image();
-img_flag.src =  "./js_rallyx/flag.jpg";
+img_flag.src =  "./flag.jpg";
 var img_burst = new Image();
-img_burst.src = "./js_rallyx/burst.jpg";
+img_burst.src = "./burst.jpg";
 
 var vmap_x0_point = 0;
 var vmap_y0_point = 0;
@@ -209,7 +212,7 @@ function set_newflag()
 async function atatta()
 {
     clearInterval(myinterval);
-    var music = new Audio('./js_rallyx/small_explosion2.mp3');
+    var music = new Audio(BOMB_SOUND);
     music.play();  // 再生
     semi_initialize();
     //mysleep(200);
@@ -535,7 +538,7 @@ function atari_hantei()
     // get flag?
     if(map[mycar_y][mycar_x]==3)
     {
-        var music = new Audio('./js_rallyx/shoot2.mp3');
+        var music = new Audio(GET_SOUND);
         music.play();  // 再生
         score += 10;
         map[mycar_y][mycar_x]=0;
