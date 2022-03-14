@@ -39,6 +39,7 @@
               
               </tr>
        </table>
+       <button id="startb">スタート</button>
        <script >
 var map = [
     [2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2, 2,2,2,2,2,2,2,2,2,2],
@@ -184,6 +185,7 @@ let score = 0;
 var nannido = 15;   // 0: easy 99: hard
 var remaining_car = 3;
 var gamestart_flag = 0; //0: start screen  1:real game
+var music1;
 
 document.onkeydown = function(e)
 {
@@ -209,16 +211,31 @@ document.onkeydown = function(e)
             vector_y=+1;
             mycar_num = 2;
             break;
-        case "s" :
-            gamestart_flag = 1;
+        case " " :
+            if(gamestart_flag==0)
+            {
+                gamestart_flag = 1;
+                music1 = new Audio(BGM);
+                music1.loop = true;
+                music1.play();  // 再生
+                _sleep(300);
+
+                myinterval  = setInterval( main_loop, GAME_SPEED);  // call dropTetro per 1sec
+            }    
             break;
 
     }
     //draw_vmap();
 }
 
-//show_startscreen();
-
+// window.onload = function()
+// {
+//     start_button = document.getElementById('start');
+//     start_button.onclick = function()
+//     {
+//         gamestart_flag = 1;
+//     }
+// }
 
 set_newflag();
 set_newflag();
@@ -226,16 +243,24 @@ set_newflag();
 
 initialize();
 draw_vmap();
-let myinterval = setInterval( main_loop, GAME_SPEED);  // call dropTetro per 1sec
+show_startscreen();
+
+let myinterval;
 
 
 function show_startscreen()
 {
-    //draw score
-    con.fillStyle = "#222";
-    con.font = "20px cursive";
-    con.fillText("Press Space key ");
+    //while(gamestart_flag==0)
+    //{
+        //draw score
+        con.fillStyle = "#222";
+        con.font = "20px cursive";
+        con.fillText("Press Space key to start", 10,20);
+    //}
+    var music0 = new Audio(BGM);
+    music0.play();  // 再生
 
+    return;
 
 
 }
@@ -262,8 +287,6 @@ function initialize()
         teki_vx[i] = 0;
         teki_vy[i] = 0;
     }
-    var music = new Audio(BGM);
-    music.play();  // 再生
         
 }
 
@@ -680,8 +703,13 @@ function atari_hantei()
 
 function gameover()
 {
+
     clearInterval(myinterval);
-    alert("Game over! \n Your score is " + score);
+    myinterval == null;
+    music1.pause();
+//    music1.loop = false;
+    gamestart_flag == 0;
+    alert("Game over! \n Your score is " + score + "\n\nPress OK button to start");
     try{
         throw new Error("Exit");
     }
@@ -689,7 +717,9 @@ function gameover()
     {}
     score = 0;
     remaining_car = 3;
+    music1.play();
     initialize();
+    //show_startscreen();
     
     //myinterval = setInterval( main_loop, GAME_SPEED);  // call dropTetro per 1sec
 
@@ -698,7 +728,7 @@ function gameover()
 
 
 
-draw_vmap();
+//draw_vmap();
 
 
 
