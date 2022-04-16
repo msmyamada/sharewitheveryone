@@ -46,10 +46,10 @@ namespace WindowsFormsApp1_test_Excel
             oSheet.Cells[5, 2] = "40";
             oSheet.Cells[6, 1] = "yama";
             oSheet.Cells[6, 2] = "12";
-            MakePivot(oWBook, "main");
+            CreatePivot(oWBook, "main");
         }
 
-        public Boolean MakePivot(Workbook oWBook, string strSheetName)
+        public Boolean CreatePivot(Workbook oWBook, string strSheetName)
         {
             Boolean result = true;
 
