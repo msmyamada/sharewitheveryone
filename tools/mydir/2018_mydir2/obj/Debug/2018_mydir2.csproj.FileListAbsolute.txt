@@ -1,0 +1,8 @@
+C:\Users\masay\git00\2018_mydir2\2018_mydir2\bin\Debug\mydir.exe.config
+C:\Users\masay\git00\2018_mydir2\2018_mydir2\bin\Debug\mydir.exe
+C:\Users\masay\git00\2018_mydir2\2018_mydir2\bin\Debug\mydir.pdb
+C:\Users\masay\git00\2018_mydir2\2018_mydir2\obj\Debug\2018_mydir2.csproj.AssemblyReference.cache
+C:\Users\masay\git00\2018_mydir2\2018_mydir2\obj\Debug\2018_mydir2.csproj.SuggestedBindingRedirects.cache
+C:\Users\masay\git00\2018_mydir2\2018_mydir2\obj\Debug\2018_mydir2.csproj.CoreCompileInputs.cache
+C:\Users\masay\git00\2018_mydir2\2018_mydir2\obj\Debug\mydir.exe
+C:\Users\masay\git00\2018_mydir2\2018_mydir2\obj\Debug\mydir.pdb
