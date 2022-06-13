@@ -1,0 +1,44 @@
+
+#cnt = 1;
+#mytop = seltopy;
+#mybottom = selendy;
+#myx = x;
+#isspace = 0;
+
+if(x==0)
+{
+	#mybottom = #mybottom -1;
+	#isspace = 1;
+}
+
+if(selecting == 0)
+{
+	message "No selection. Select the area first!";
+	endmacro;
+}
+
+escape;	// cancel selecting mode
+#endcnt = #mybottom - #mytop + #cnt;
+while(#cnt <= #endcnt)
+{
+	moveto #myx,#mytop+#cnt-1;
+	insert str(#cnt);
+	if(#isspace == 1)
+		insert " ";
+	#cnt = #cnt + 1;
+}
+
+
+
+
+// insert number
+//#a = 1;
+//#end = 20;
+//while(#a <= #end)
+//{
+//	insert str(#a) + "\n";
+//	#a = #a +1;
+//}
+
+
+
