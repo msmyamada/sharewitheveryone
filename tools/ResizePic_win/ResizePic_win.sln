@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResizePic_win", "ResizePic_win\ResizePic_win.csproj", "{1D6D07D0-E20F-48B0-AE6F-6E04AEF588B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D6D07D0-E20F-48B0-AE6F-6E04AEF588B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D6D07D0-E20F-48B0-AE6F-6E04AEF588B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D6D07D0-E20F-48B0-AE6F-6E04AEF588B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D6D07D0-E20F-48B0-AE6F-6E04AEF588B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E23E57B-A487-4FC1-9386-6C06D92A1EB1}
+	EndGlobalSection
+EndGlobal

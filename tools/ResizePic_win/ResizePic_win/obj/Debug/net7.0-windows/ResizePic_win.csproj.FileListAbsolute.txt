@@ -1,0 +1,17 @@
+C:\clones\mytools01\ResizePic_win\ResizePic_win\bin\Debug\net7.0-windows\ResizePic_win.exe
+C:\clones\mytools01\ResizePic_win\ResizePic_win\bin\Debug\net7.0-windows\ResizePic_win.deps.json
+C:\clones\mytools01\ResizePic_win\ResizePic_win\bin\Debug\net7.0-windows\ResizePic_win.runtimeconfig.json
+C:\clones\mytools01\ResizePic_win\ResizePic_win\bin\Debug\net7.0-windows\ResizePic_win.dll
+C:\clones\mytools01\ResizePic_win\ResizePic_win\bin\Debug\net7.0-windows\ResizePic_win.pdb
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.csproj.AssemblyReference.cache
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.Form1.resources
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.csproj.GenerateResource.cache
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.GeneratedMSBuildEditorConfig.editorconfig
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.AssemblyInfoInputs.cache
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.AssemblyInfo.cs
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.csproj.CoreCompileInputs.cache
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.dll
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\refint\ResizePic_win.dll
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.pdb
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ResizePic_win.genruntimeconfig.cache
+C:\clones\mytools01\ResizePic_win\ResizePic_win\obj\Debug\net7.0-windows\ref\ResizePic_win.dll
